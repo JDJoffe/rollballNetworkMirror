@@ -36,8 +36,6 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-
-
             float inputH = Input.GetAxis("Horizontal");
             float inputV = Input.GetAxis("Vertical");
             Move(inputH, inputV);
@@ -46,6 +44,7 @@ public class Player : NetworkBehaviour
                 Jump();
             }
         }
+
     }
     #endregion
     #region Custom

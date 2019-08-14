@@ -25,13 +25,13 @@ public class Player : NetworkBehaviour
         //playerCam.enabled = isLocalPlayer;
         if (isLocalPlayer)
         {
-          //  playerCam.enabled = true;
+            playerCam.enabled = true;
          //   playerCam.rect = new Rect(0f, 0f, 0.5f, 1f);
             playerVirtCam.gameObject.SetActive(true);
         }
         else
         {
-         //   playerCam.enabled = false;
+           playerCam.enabled = false;
          //   playerCam.rect = new Rect(0.5f, 0f, 0.5f, 1f);
             playerVirtCam.gameObject.SetActive(false);
         }

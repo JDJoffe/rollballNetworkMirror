@@ -4,6 +4,8 @@ using UnityEngine;
 using Mirror;
 public class Player : NetworkBehaviour
 {
+    public GameObject bombPrefab;
+
     public Transform playerVirtCam;
     public Camera playerCam;
     public float speed = 10f, jump = 10f;
@@ -26,13 +28,13 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer)
         {
             playerCam.enabled = true;
-         //   playerCam.rect = new Rect(0f, 0f, 0.5f, 1f);
+            //   playerCam.rect = new Rect(0f, 0f, 0.5f, 1f);
             playerVirtCam.gameObject.SetActive(true);
         }
         else
         {
-           playerCam.enabled = false;
-         //   playerCam.rect = new Rect(0.5f, 0f, 0.5f, 1f);
+            playerCam.enabled = false;
+            //   playerCam.rect = new Rect(0.5f, 0f, 0.5f, 1f);
             playerVirtCam.gameObject.SetActive(false);
         }
         rigid = GetComponent<Rigidbody>();
@@ -59,6 +61,10 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CmdSpawnBomb(transform.position);
+            }
             float inputH = Input.GetAxis("Horizontal");
             float inputV = Input.GetAxis("Vertical");
             Move(inputH, inputV);
@@ -67,8 +73,17 @@ public class Player : NetworkBehaviour
                 Jump();
             }
 
+
         }
 
+    }
+    #endregion
+    #region Commands
+    [Command]
+    private void CmdSpawnBomb(Vector3 pos)
+    {
+        GameObject bomb = Instantiate(bombPrefab, pos, Quaternion.identity);
+        NetworkServer.Spawn(bomb);
     }
     #endregion
     #region Custom
@@ -79,6 +94,7 @@ public class Player : NetworkBehaviour
             rigid.AddForce(Vector3.up * jump, ForceMode.Impulse);
         }
     }
+  
     private void Move(float inputH, float inputV)
     {
         Vector3 direction = new Vector3(inputH, 0, inputV);

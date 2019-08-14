@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
+  bombPrefab: {fileID: 1840706091338150725, guid: 2a97610dfba96c64b88cdf27a97b686c,
+    type: 3}
   playerVirtCam: {fileID: 1834283411854091276}
   playerCam: {fileID: 3422314373882142314}
   speed: 10

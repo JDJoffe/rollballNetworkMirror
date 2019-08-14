@@ -382,8 +382,8 @@ MonoBehaviour:
   startOnHeadless: 1
   serverTickRate: 30
   showDebugMessages: 0
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Offline
+  onlineScene: Online
   transport: {fileID: 1626143316}
   networkAddress: localhost
   maxConnections: 4

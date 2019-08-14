@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c468f4b08826fe479b3cd04d7ee8d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncInterval: 0.1
   targetTag: Target
   target: {fileID: 0}
 --- !u!114 &4130247263042567304
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 1
+  serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 90a8eb10b9258174280e595eb861cf50
   m_SceneId: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  compressRotation: 1
+  compressRotation: 2
 --- !u!195 &5430411947850084887
 NavMeshAgent:
   m_ObjectHideFlags: 0

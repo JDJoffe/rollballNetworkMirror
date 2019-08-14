@@ -4,6 +4,8 @@ using UnityEngine;
 using Mirror;
 public class Player : NetworkBehaviour
 {
+    public Transform playerVirtCam;
+    public Camera playerCam;
     public float speed = 10f, jump = 10f;
     public LayerMask ignoreLayers;
     public float rayDistance = 10f;
@@ -17,6 +19,22 @@ public class Player : NetworkBehaviour
     }
     private void Start()
     {
+        playerVirtCam.transform.SetParent(null);
+        playerCam.transform.SetParent(null);
+        //or 
+        //playerCam.enabled = isLocalPlayer;
+        if (isLocalPlayer)
+        {
+          //  playerCam.enabled = true;
+         //   playerCam.rect = new Rect(0f, 0f, 0.5f, 1f);
+            playerVirtCam.gameObject.SetActive(true);
+        }
+        else
+        {
+         //   playerCam.enabled = false;
+         //   playerCam.rect = new Rect(0.5f, 0f, 0.5f, 1f);
+            playerVirtCam.gameObject.SetActive(false);
+        }
         rigid = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
@@ -32,6 +50,11 @@ public class Player : NetworkBehaviour
             item.Collect();
         }
     }
+    private void OnDestroy()
+    {
+        Destroy(playerCam.gameObject);
+        Destroy(playerVirtCam.gameObject);
+    }
     private void Update()
     {
         if (isLocalPlayer)
@@ -43,6 +66,7 @@ public class Player : NetworkBehaviour
             {
                 Jump();
             }
+
         }
 
     }

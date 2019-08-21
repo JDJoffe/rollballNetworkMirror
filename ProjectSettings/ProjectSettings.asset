@@ -568,7 +568,7 @@ PlayerSettings:
   webGLLinkerTarget: 0
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2
+    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;MIRROR;MIRROR_1726_OR_NEWER;MIRROR_3_0_OR_NEWER
     2: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
@@ -695,7 +695,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 6
   cloudProjectId: b4707483-90f9-4a10-bc6d-b8f92846945d
   framebufferDepthMemorylessMode: 0
   projectName: EffectsExamples

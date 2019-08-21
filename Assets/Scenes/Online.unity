@@ -162,7 +162,7 @@ MonoBehaviour:
   serverOnly: 1
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 3893100553
+  m_SceneId: 807815535
 --- !u!4 &1231069472
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 1639313237}
   - component: {fileID: 1639313236}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

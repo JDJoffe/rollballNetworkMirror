@@ -54,8 +54,7 @@ public class Player : NetworkBehaviour
     }
     private void OnDestroy()
     {
-        Destroy(playerCam.gameObject);
-        Destroy(playerVirtCam.gameObject);
+       
     }
     private void Update()
     {
